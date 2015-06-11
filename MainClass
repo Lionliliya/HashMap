@@ -1,0 +1,36 @@
+package hashmaphome3;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Random;
+
+public class ArraySumma {
+
+	public static void main(String[] args) {
+		HashMap<Integer, Integer> arr = new HashMap<Integer, Integer>();
+		Random rn = new Random(1000);
+		Integer key = 0;
+		Integer value = 0;
+		for (int i = 0; i < 1000; i++) {
+			value = rn.nextInt(15);
+			arr.put(key++, value);
+		}
+		System.out.println(arr);
+		System.out.println();
+		Collection<Integer> valueses = arr.values();
+
+		int nnn = 0;
+		HashMap<Integer, Integer> arr2 = new HashMap<Integer, Integer>();
+		for (Integer a : valueses) {
+			nnn = Collections.frequency(valueses, a);
+
+			if (!arr2.containsKey(a)) {
+				arr2.put(a, nnn);
+			}
+
+		}
+		System.out.println(arr2);
+	}
+
+}
